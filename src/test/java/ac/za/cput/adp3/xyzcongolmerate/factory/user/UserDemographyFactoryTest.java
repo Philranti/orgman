@@ -1,23 +1,25 @@
 package ac.za.cput.adp3.xyzcongolmerate.factory.user;
 
+import ac.za.cput.adp3.xyzcongolmerate.domain.user.UserDemography;
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import static org.junit.Assert.*;
 
 public class UserDemographyFactoryTest {
 
-    //TODO: implement method body ONLY!
+
     @Test
     public void buildUserDemography() {
-        throw new UnsupportedOperationException("Not supported yet.");
-        /**
-         * Your implementation goes here
-         *
-         * INSTRUCTION
-         * 1. Remove line [//TODO: implement method body ONLY!]
-         * 2. Remove line [throw new UnsupportedOperationException("Not yet supported.");]
-         * 3. Test the UserDemographyFactory class
-         * 4. Assert that the an object is created.
-         */
+        Calendar cal = new GregorianCalendar(1994, 07, 19);
+
+
+        UserDemography userDemography = UserDemographyFactory.buildUserDemography("xyz.phil@outlook.com",
+                "Mr", "GF","Black",cal.getTime());
+        Assert.assertNotNull(userDemography);
+        System.out.println(userDemography.toString());
     }
 }

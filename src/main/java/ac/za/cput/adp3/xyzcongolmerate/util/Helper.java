@@ -14,13 +14,15 @@ public class Helper {
 
     public static String getSuffixFromClassName(Class<?> aClass) {
         String className = getClassName(aClass);
-        throw new UnsupportedOperationException("Not yet supported!");
-        /**
-         * Your implementation goes here
-         *
-         * INSTRUCTION
-         * 1. Remove line 17 [throw new UnsupportedOperationException("Not yet supported!");]
-         * 2. Get the capitalized letter(s) from the className and return it.
-         */
+
+        String suffixId = "";
+
+        for(int x = 0; x < className.length(); x++){
+            if(Character.isUpperCase(className.charAt(x))){
+                char character = className.charAt(x);
+                suffixId = suffixId + character + "";
+            }
+        }
+        return suffixId.replaceAll("\\r+","");
     }
 }
